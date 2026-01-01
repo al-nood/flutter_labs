@@ -18,7 +18,6 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
   @override
   void initState() {
     super.initState();
-    // إضافة مراقبة لكل حقل
     nameController.addListener(_checkFields);
     emailController.addListener(_checkFields);
     messageController.addListener(_checkFields);
@@ -107,12 +106,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                         backgroundColor: Colors.teal,
                       ),
                     );
-                    // مسح الحقول بعد الإرسال
                     nameController.clear();
                     emailController.clear();
                     messageController.clear();
                   }
-                      : null, // معطل إذا الحقول فارغة
+                      : null,
                   icon: const Icon(Icons.send),
                   label: const Text(
                     "Send Message",
